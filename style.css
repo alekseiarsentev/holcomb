@@ -1,0 +1,537 @@
+:root {
+    --navbar-bg-color: #e4dfd7;
+    --navbar-text-color: black;
+    --navbar-text-color-focus: rgb(83, 83, 83);
+    --navbar-bg-contrast: hsl(0, 0%, 25%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+}
+
+.container {
+    max-width: 1400px;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #navbar {
+    --navbar-height: 48px;
+    position: fixed;
+    height: var(--navbar-height);
+    background-color: var(--navbar-bg-color);
+    left: 0;
+    right: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    margin: 1rem;
+    border-radius: 0.5rem;
+
+  }
+
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+  }
+  .navbar-item {
+    margin: 0.4em;
+    width: 100%;
+  }
+  
+  .home-link,
+  .navbar-link {
+    color: var(--navbar-text-color);
+    text-decoration: none;
+    display: flex;
+    font-weight: 400;
+    align-items: center;
+    font-family: var(--font-button);
+  }
+  
+  .home-link:is(:focus, :hover) {
+    color: var(--navbar-text-color-focus);
+  }
+  
+  .navbar-link {
+    justify-content: center;
+    width: 100%;
+    padding: 0.4em 0.8em;
+    border-radius: 5px;
+    white-space: nowrap;
+  }
+  
+  .navbar-link:is(:focus, :hover) {
+    color: white;
+    background-color: var(--navbar-bg-contrast);
+  }
+  .navbar-logo {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5em;
+  }
+
+  .navbar-logo img {
+    width: 30px;
+    height: 30px;
+  }
+
+  #navbar-toggle {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .icon-bar {
+    display: block;
+    width: 25px;
+    height: 4px;
+    margin: 2px;
+    background-color: var(--navbar-text-color);
+  }
+  #navbar-toggle:is(:focus, :hover) .icon-bar {
+    background-color: var(--navbar-text-color-focus);
+  }
+  #navbar-toggle[aria-expanded="true"] .icon-bar:is(:first-child, :last-child) {
+    position: absolute;
+    margin: 0;
+    width: 30px;
+  }
+  #navbar-toggle[aria-expanded="true"] .icon-bar:first-child {
+    transform: rotate(45deg);
+  }
+  #navbar-toggle[aria-expanded="true"] .icon-bar:nth-child(2) {
+    opacity: 0;
+  }
+  #navbar-toggle[aria-expanded="true"] .icon-bar:last-child {
+    transform: rotate(-45deg);
+  }
+  #navbar-menu {
+    position: fixed;
+    top: var(--navbar-height);
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    left: 0;
+    right: 0;
+  }
+  #navbar-toggle[aria-expanded="true"] + #navbar-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+  .navbar-links {
+    list-style: none;
+    position: absolute;
+    background-color: var(--navbar-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+    right: 0;
+    margin: 1.4rem;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  #navbar-toggle[aria-expanded="true"] + #navbar-menu .navbar-links {
+    padding: 1em;
+  }
+  @media screen and (min-width: 700px) {
+    #navbar-toggle,
+    #navbar-toggle[aria-expanded="true"] {
+      display: none;
+    }
+  
+    #navbar-menu,
+    #navbar-toggle[aria-expanded="true"] #navbar-menu {
+      visibility: visible;
+      opacity: 1;
+      position: static;
+      display: block;
+      height: 100%;
+    }
+  
+    .navbar-links,
+    #navbar-toggle[aria-expanded="true"] #navbar-menu .navbar-links {
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      position: static;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+.section-1 {
+    min-height: 100vh;
+    background: url(/images/00_Holcomb_Kitchen_Lifestyle_Product_Seattle_Design.webp) no-repeat center center/cover;
+}
+
+.section-2 {
+    padding-inline: clamp(0.625rem, 0.4076rem + 1.087vi, 1.25rem);
+}
+
+.section-2 > h1 {
+    margin-block: clamp(5rem, 3.6957rem + 6.5217vi, 8.75rem);
+    font-size: clamp(2rem, 1rem + 5vi, 4.875rem);
+    text-align: center;
+    font-family: "Anonymous Pro", monospace;
+    font-weight: 400;
+}
+
+ .bold {
+    font-size: clamp(2rem, 1rem + 5vi, 4.875rem);
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+}
+
+.card-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: "Anonymous Pro", monospace;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    border-radius: clamp(0.25rem, 0.0761rem + 0.8696vi, 0.75rem);
+    object-fit: cover;
+}
+
+
+.card h4 {
+    font-size: 1rem;
+    font-weight: 400;
+    text-wrap: nowrap;
+    margin-top: 0.5rem;
+    margin-left: 0.3rem;
+}
+
+.card h5 {
+    font-size: 1rem;
+    font-weight: 400;
+    text-wrap: nowrap;
+    color: grey;
+    font-weight: 800;
+    margin-block: 0.2rem;
+    margin-left: 0.3rem;
+}
+
+.card span {
+    margin-bottom: 1rem;
+    margin-left: 0.3rem;
+}
+
+.card button {
+    position: relative;
+    top: 35px;
+    left: 10px;
+    border-radius: 0.5rem;
+    width: fit-content;
+    padding: 5px;
+    border: none;
+    background-color: #D8D294;
+    color: gray;
+    text-transform: capitalize;
+}
+
+.section-2 p {
+    margin-block: clamp(5rem, 4.3043rem + 3.4783vi, 7rem);
+    font-size: clamp(1.25rem, 0.8152rem + 2.1739vi, 2.5rem);
+    font-weight: 400;
+    transition: font-size 0.7s ease;
+    color: gray;
+    padding-inline: 0.625rem;
+}
+
+.black {
+    font-size: clamp(1.25rem, 0.8152rem + 2.1739vi, 2.5rem);
+    font-weight: 500;
+    transition: font-size 0.7s ease;
+    color: black;
+    font-family: "Poppins", sans-serif;
+}
+
+.wrapper-big-image {
+    margin-bottom: 1.5rem;
+}
+
+.wrapper-big-image img {
+    width: 100%;
+    border-radius: clamp(0.25rem, 0.0761rem + 0.8696vi, 0.75rem);
+}
+
+.wrapper-text h3 {
+    font-size: clamp(1.25rem, 1.1413rem + 0.5435vi, 1.5625rem);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: gray;
+    transition: font-size 0.7s ease;
+}
+
+.black2 {
+    font-size: clamp(1.25rem, 1.1413rem + 0.5435vi, 1.5625rem);
+    font-weight: 500;
+    transition: font-size 0.7s ease;
+    color: black;
+    font-family: "Poppins", sans-serif;
+}
+
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: min(350px, 100%);
+    height: 40px;
+    background-color: #D8D294;
+    border: none;
+    border-radius: 0.3rem;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 0.9rem;
+}
+
+.btn:hover {
+    background-color: #9a944f;
+    color: black
+}
+
+.btn2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: min(350px, 100%);
+    height: 40px;
+    background-color: #D8D294;
+    border: none;
+    border-radius: 0.3rem;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 0.9rem;
+    margin-inline: auto;
+}
+
+.btn2:hover {
+    background-color: #9a944f;
+    color: black
+}
+
+.section-4 {
+    padding-inline: 0.625rem;
+    margin-top: 10rem;
+
+}
+
+
+
+.card-big img {
+    width: 100%;
+    border-radius: 0.3rem;
+}
+
+.card-2 h3 {
+    font-size: clamp(1rem, 0.8261rem + 0.8696vi, 1.5rem);
+    margin-top: 1.5rem;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+}
+
+.card-2 p {
+    font-size: clamp(1rem, 0.8261rem + 0.8696vi, 1.5rem);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    transition: font-size 0.7s ease;
+    color: gray;
+}
+
+.card-2 h5 {
+    font-size: clamp(1rem, 0.8261rem + 0.8696vi, 1.5rem);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+
+
+
+.images-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-block: 1rem;
+    overflow: scroll;
+}
+
+
+.images-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.images-wrapper > img{
+    width: 55%;
+    border-radius: 0.3rem;
+    aspect-ratio: 1/1.3;
+    margin: 0.25rem;
+}
+
+.insta-wrapper {
+    margin-top: 10rem;
+    text-align: center;
+}
+
+.insta-wrapper h2 {
+    font-size: clamp(1.25rem, 1.1413rem + 0.5435vi, 1.5625rem);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    transition: font-size 0.7s ease;
+}
+
+.scroller {
+    max-width: 100%;
+  }
+
+.scroller__inner > img {
+    width: 350px;
+    aspect-ratio: 1/1;
+    border-radius: 0.3rem;
+}
+  
+  .scroller__inner {
+    padding-block: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .scroller[data-animated="true"] {
+    overflow: hidden;
+  }
+  
+  .scroller[data-animated="true"] .scroller__inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll var(--_animation-duration, 40s)
+      var(--_animation-direction, forwards) linear infinite;
+  }
+  
+  .scroller[data-direction="right"] {
+    --_animation-direction: reverse;
+  }
+  
+  .scroller[data-direction="left"] {
+    --_animation-direction: forwards;
+  }
+  
+  .scroller[data-speed="fast"] {
+    --_animation-duration: 20s;
+  }
+  
+  .scroller[data-speed="slow"] {
+    --_animation-duration: 60s;
+  }
+  
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+
+
+.end {
+    padding-inline: 0.625rem;
+    margin-block: 2rem;
+}
+
+.menu {
+    padding: clamp(1rem, 0.0435rem + 4.7826vi, 3.75rem);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1rem;
+}
+
+ul {
+    list-style-type: none;
+    font-family: var(--font-button);
+    font-size: clamp(0.75rem, 0.663rem + 0.4348vi, 1rem);
+}
+
+li {
+    line-height: clamp(1.5rem, 1.3696rem + 0.6522vi, 1.875rem);
+}
+
+@media screen and (min-width: 768px) {
+
+    .card-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 1rem;
+    }
+    
+    .wrapper-text {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        justify-content: space-around;
+        gap: 3rem;
+    }
+
+    .wrapper-big-image {
+        width: 40%;
+    }
+
+    .wrapper-button {
+        width: 40%;
+    }
+
+    .section-3 {
+        min-height: 100vh;
+        margin-block: 2rem;
+        background: url(/images/Holcomb_Coaster_Mortor_Pestle_Pepper_Mill_Birdie_Wine_Decanter_Kitchen_Product.webp) no-repeat center center/cover;
+    }
+
+    .section-4 {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: start;
+        justify-content: space-around;
+        gap: 3rem;
+    }
+
+    .card-big {
+        width: 40%;
+    }
+
+    .card-2 {
+        width: 40%;
+    }
+
+}
