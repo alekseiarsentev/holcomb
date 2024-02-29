@@ -422,7 +422,7 @@ body {
   }
 
 .scroller__inner > img {
-    width: 350px;
+    width: 250px;
     aspect-ratio: 1/1;
     border-radius: 0.3rem;
 }
@@ -590,6 +590,12 @@ li {
     .showend {
         padding: 0 2rem 2rem 2rem;
         transition: padding 0.7s ease, border-radius 0.7s ease;
+    }
+
+    .scroller__inner > img {
+        width: 400px;
+        aspect-ratio: 1/1;
+        border-radius: 0.3rem;
     }
 
 }
