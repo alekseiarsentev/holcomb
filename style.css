@@ -491,15 +491,16 @@ li {
 .section-1 {
     /* Define initial state */
     margin: 0;
+    border-radius: 0;
     /* Apply transition */
-    transition: margin 0.7s ease;
+    transition: margin 0.7s ease, border-radius 0.7s ease;
 }
 
 .show {
     /* Define the final state */
     margin: 0 1rem 1rem 1rem; /* Simulate removal of margin */
-    border-radius: 1rem;
-    transition: margin 0.7s ease;
+    border-radius: 1.5rem;
+    transition: margin 0.7s ease, border-radius 0.7s ease;
 }
 
 
