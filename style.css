@@ -518,12 +518,12 @@ li {
     background-color: #807E73;
     padding: 0;
     border-radius: 0;
-    transition: padding 0.7s ease, border-radius 0.7s ease;
+    transition: padding 0.5s ease, border-radius 0.7s ease;
 }
 
 .showend {
     padding: 0 1rem 1rem 1rem;
-    transition: padding 0.7s ease, border-radius 0.7s ease;
+    transition: padding 0.5s ease, border-radius 0.7s ease;
 }
 
 
@@ -589,7 +589,7 @@ li {
 
     .showend {
         padding: 0 2rem 2rem 2rem;
-        transition: padding 0.7s ease, border-radius 0.7s ease;
+        transition: padding 0.5s ease, border-radius 0.7s ease;
     }
 
     .scroller__inner > img {
