@@ -34,6 +34,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     z-index: 2;
     margin: 1rem;
+    margin-inline: 2.5rem;
     border-radius: 0.5rem;
 
   }
@@ -482,7 +483,8 @@ body {
     place-items: center;
     align-items: start;
     gap: 1rem;
-    background-color: gray;
+    background-color: #807E73;
+    color: white;
 }
 
 ul {
@@ -513,7 +515,7 @@ li {
 
 
 .section-4-wrapper {
-    background-color: gray;
+    background-color: #807E73;
     padding: 0;
     border-radius: 0;
     transition: padding 0.7s ease, border-radius 0.7s ease;
