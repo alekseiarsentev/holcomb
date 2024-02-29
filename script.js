@@ -89,3 +89,23 @@ const image3 = document.getElementById('image3');
     
     navbarLinksContainer.addEventListener("click", (e) => e.stopPropagation());
     navbarMenu.addEventListener("click", toggleNavbarVisibility);
+
+
+
+
+
+
+    
+const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const section1 = document.querySelector('.section-1');
+            if (entry.isIntersecting) {
+                section1.classList.add('show');
+            } else {
+                section1.classList.remove('show');
+            }
+        });
+    });
+    
+    const section2 = document.querySelector('.section-2');
+    observer.observe(section2);
