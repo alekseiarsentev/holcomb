@@ -349,7 +349,7 @@ body {
 .section-4 {
     padding-inline: 0.625rem;
     margin-top: 10rem;
-
+    background-color: white;
 }
 
 
@@ -403,9 +403,11 @@ body {
 }
 
 .insta-wrapper {
-    margin-top: 10rem;
+    padding-top: 10rem;
     text-align: center;
+    background-color: white;
 }
+
 
 .insta-wrapper h2 {
     font-size: clamp(1.25rem, 1.1413rem + 0.5435vi, 1.5625rem);
@@ -467,14 +469,20 @@ body {
 
 .end {
     padding-inline: 0.625rem;
-    margin-block: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    background-color: white;
+    border-radius: 0 0 1.5rem 1.5rem;
 }
 
 .menu {
-    padding: clamp(1rem, 0.0435rem + 4.7826vi, 3.75rem);
+    padding: clamp(1.5rem, 0.0435rem + 4.7826vi, 3.75rem);
     display: grid;
     grid-template-columns: auto auto auto;
+    place-items: center;
+    align-items: start;
     gap: 1rem;
+    background-color: gray;
 }
 
 ul {
@@ -502,6 +510,20 @@ li {
     border-radius: 1.5rem;
     transition: margin 0.7s ease, border-radius 0.7s ease;
 }
+
+
+.section-4-wrapper {
+    background-color: gray;
+    padding: 0;
+    border-radius: 0;
+    transition: padding 0.7s ease, border-radius 0.7s ease;
+}
+
+.showend {
+    padding: 0 2rem 2rem 2rem;
+    transition: padding 0.7s ease, border-radius 0.7s ease;
+}
+
 
 
 @media screen and (min-width: 768px) {
@@ -555,6 +577,12 @@ li {
 
     .card-2 {
         width: 40%;
+    }
+
+    .menu {
+        
+        place-items: start;
+        
     }
 
 }

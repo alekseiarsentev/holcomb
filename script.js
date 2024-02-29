@@ -95,7 +95,7 @@ const image3 = document.getElementById('image3');
 
 
 
-    
+
 const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             const section1 = document.querySelector('.section-1');
@@ -109,3 +109,18 @@ const observer = new IntersectionObserver(entries => {
     
     const section2 = document.querySelector('.section-2');
     observer.observe(section2);
+
+
+    const observer2 = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const section4wrapper = document.querySelector('.section-4-wrapper');
+            if (entry.isIntersecting) {
+                section4wrapper.classList.add('showend');
+            } else {
+                section4wrapper.classList.remove('showend');
+            }
+        });
+    });
+    
+    const end = document.querySelector('.end');
+    observer2.observe(end);
