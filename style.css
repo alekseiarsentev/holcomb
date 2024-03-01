@@ -36,7 +36,7 @@ body {
     margin: 1rem;
     margin-inline: 2.5rem;
     border-radius: 0.5rem;
-
+    transition: top 0.3s;
   }
 
   .navbar-container {
